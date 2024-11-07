@@ -1,5 +1,6 @@
 import express from "express";
 import ContactsRoutes from "./Routes/contacts.routes.js";
+import connectDB from "./config/db.js";
 
 const app = express();
 
@@ -8,7 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // // connect to db
-// connectDB();
+connectDB();
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));

@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch --env-file=.env server",
-    "start": "node server.js"
+    "start": "node server.js",
+    "create-db": "docker run --name contact-api-db -d -p 27017:27017 mongo",
+    "start-db": "docker start contact-api-db",
+    "stop-db": "docker stop contact-api-db"
   },
   "keywords": [],
   "author": "Abiola Abdulsalam",
