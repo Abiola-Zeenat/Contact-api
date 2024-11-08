@@ -16,7 +16,10 @@ const getContacts = async (req, res) => {
       data: contacts,
     });
   } catch (error) {
-    res.status(500).json(error);
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
   }
 };
 
